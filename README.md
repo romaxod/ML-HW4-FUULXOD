@@ -38,10 +38,7 @@ backward ერთი loss.backward() ის შემდეგ, ყოველ
 
 ### Iteration 1 — MLP (baseline, `MLP_Training`)
 
-**Decision:** start with the simplest network — flatten the 48×48 image to a
-2,304-vector and use dense layers — to measure what a model with **no spatial
-prior** can do. **9 configurations** tested (a capacity ladder + a regularization
-sweep + a linear baseline):
+
 
 დავიწყეთ ყველაზე მარტივი ნეთვორქით - 48x48 ფოტო დაგვყავს ვექტორზე და ვიყენებთ დიდ ლეიერებს. ამას ვაკეთებთ იმის შესამოწმებლად თუ რა შეუძლია ბეისლაინ მოდელს. ვიღებთ 9 სხვადასხვა კონფიგურაციას რეგულარიზაციის სვიპს, წრფივ ბეისლაინს. 
 
@@ -74,10 +71,7 @@ sweep + a linear baseline):
 
 ### Iteration 2 — Small CNN (`SmallCNN_Training`)
 
-**Decision:** add the layer type that matters for images — **convolutions**
-(weight sharing + locality). Two conv blocks (Conv3×3 → ReLU → MaxPool) then a
-dense head. **10 configs** tested (channel-capacity ladder + regularization
-sweep) plus a 12-run Bayesian W&B sweep.
+
 
  დავამატეთ ლერიერი, ოღონდ ისეთი რომელსაც შეუძლია უკეთესად იმუშავოს ფოტოებთან. დავამატეთ ორი conv ბლოკი (Conv 3x3 reLU maxpool). გავტესტეთ 10 კონფიგი. ასევე გამოვიყენეთ wandbს სვიპი 15 რანით.
 
@@ -111,11 +105,7 @@ sweep) plus a 12-run Bayesian W&B sweep.
 
 ### Iteration 3 — Deep CNN + BatchNorm + Dropout (`DeepCNN_Training`)
 
-**Decision:** add depth and stabilizers — three VGG-style stages (two 3×3 convs
-each), BatchNorm, global average pooling, and the full regularization stack
-(dropout + weight decay + augmentation + label smoothing). Each addition answers
-a problem seen earlier (depth → MLP's low ceiling; BN → stable deep training;
-dropout/wd/aug → SmallCNN's overfitting). Plus a 6-run Bayesian W&B sweep.
+
 
 დავამატე სიღრმე და სტაბილიზატორები სამი vgg სტეიჯი (ორი 3ხ3 კონვ თითოსთვის), ბატჩნორმალიზაცია, გლობალური საშუალო პულინგ, და სრული რეგულარიზაცია სტაკზე (dropout + weight decay + augmentation + label smoothing). თითოეული დამატება პასუხობს ადრე წარმოშობილ პრობლემებს (სიღრმე - მლპს დაბალ ექურასის, ბატჩნორმალიზაცია სტაბილურ დიპ ტრეინინგს, დანარჩენები უფრო პატარა ცნნის ოვერფიტს) ასევე გვაქვს 6 რანიანი სვიპი wandbს გამოყენებით.
 

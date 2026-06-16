@@ -17,11 +17,10 @@
 
 ```
 README.md                        # ანალიზი
-WANDB_REPORT.md                  # რეპორტისთვის
+WANDB_REPORT.pdf                  # რეპორტი (link მაქვს ქვევით რიდმიში)
 model_experiment_MLP.ipynb       # iteration 1 — MLP
 model_experiment_SmallCNN.ipynb  # iteration 2 — Small CNN (+ W&B sweep)
 model_experiment_DeepCNN.ipynb   # iteration 3 — Deep CNN (+ W&B sweep)
-model_inference.ipynb            # საუკეთესო მოდელის აღება და საბმიშენ ფაილის დაგნერირება
 submission.csv                   # საბმიშენის ფაილი
 pictures/                        # რიდმიში გამოყეენბული ფოტოები
 ```

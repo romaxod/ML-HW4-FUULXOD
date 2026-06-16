@@ -9,14 +9,9 @@
 
 ## 1. Competition overview
 
-48×48 grayscale face images, each labelled with one of seven emotions
-(0 Angry, 1 Disgust, 2 Fear, 3 Happy, 4 Sad, 5 Surprise, 6 Neutral). Multi-class
-classification scored on accuracy. We use the official split in
-`icml_face_data.csv` (column `Usage`): `Training` (28,709) → train,
-`PublicTest` (3,589) → validation, `PrivateTest` (3,589) → test. The same split
-is used for every model so the comparison is fair.
-
 48x48 სახის ფოტოები, თითოეულს ლაბელი აქვს 7 ემოციიდან. მულტი კლას კლასიფიკაცია გვაქვს, რომელიც ისქორება ექურასის მიხედვით. დატა უკვე გასპლიტულია.
+
+
 
 ## 2. Repository structure
 
